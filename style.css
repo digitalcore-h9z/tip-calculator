@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: url(./perfect_hue_3.jpg);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+}
+.card-container {
+    height: 100vh;
+}
+.card-container,
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+
+    width: 593px;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+
+    /* fundalul tău, dar semi-transparent ca sticla să lase lumina din spate să treacă */
+    background: linear-gradient(180deg, rgba(11, 46, 158, 0.45) 0%, rgba(4, 16, 56, 0.55) 100%);
+
+    /* "Frost" — blur pe ce e în spatele cardului */
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+    /* margine fină, ca o muchie de sticlă */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    /* "Depth" + "Refraction" simulate prin umbre interioare */
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.4),
+        /* highlight sus, ca lumina care intră */ inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+        /* umbră jos, adâncime */ inset 0 0 40px rgba(79, 195, 247, 0.08),
+        /* glow difuz din interior */ 0 8px 32px rgba(0, 0, 0, 0.4); /* umbră proiectată pe fundal */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6) 50%, transparent);
+}
+
+/* Dispersia cromatică fină din colțuri (efectul irizat) */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        135deg,
+        rgba(199, 125, 209, 0.06) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(127, 232, 196, 0.06) 100%
+    );
+    pointer-events: none;
+}
+
+.card p,
+.card label,
+.card input::placeholder,
+.card h3 {
+    color: #fff;
+}
+
+.card input::placeholder {
+    font-size: 14.5px;
+}
+
+.card p,
+.card label {
+    font-size: 18px;
+}
+
+.card h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 33px;
+}
+
+.card label,
+.card input,
+.card p {
+    margin-top: 2rem;
+}
+
+.card input {
+    padding: 20px 20px;
+    border-radius: 10px;
+    outline: none;
+    color: #fff;
+    background-color: rgba(11, 46, 158, 0.2);
+    /* "Frost" — blur pe ce e în spatele cardului */
+    backdrop-filter: blur(15px) saturate(140%);
+    -webkit-backdrop-filter: blur(15px) saturate(140%);
+
+    /* margine fină, ca o muchie de sticlă */
+    border: 1px solid rgba(11, 255, 255, 0.18);
+
+    /* "Depth" + "Refraction" simulate prin umbre interioare */
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.4),
+        /* highlight sus, ca lumina care intră */ inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+        /* umbră jos, adâncime */ inset 0 0 40px rgba(79, 195, 247, 0.08),
+        /* glow difuz din interior */ 0 8px 32px rgba(0, 0, 0, 0.4); /* umbră proiectată pe fundal */
+}
+
+.card input:focus {
+    transition: all ease-in-out 0.4s;
+    box-shadow: 4px 4px 4px 4px rgba(11, 45, 158, 0.398);
+}
+
+.btns {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculate-btn {
+    padding: 20px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: rgba(11, 46, 158, 0.2);
+    /* "Frost" — blur pe ce e în spatele cardului */
+    backdrop-filter: blur(15px) saturate(140%);
+    -webkit-backdrop-filter: blur(15px) saturate(140%);
+
+    /* margine fină, ca o muchie de sticlă */
+    border: 1px solid rgba(11, 255, 255, 0.18);
+
+    /* "Depth" + "Refraction" simulate prin umbre interioare */
+    margin-left: 2rem;
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.4),
+        /* highlight sus, ca lumina care intră */ inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+        /* umbră jos, adâncime */ inset 0 0 40px rgba(79, 195, 247, 0.08),
+        /* glow difuz din interior */ 0 8px 32px rgba(0, 0, 0, 0.4); /* umbră proiectată pe fundal */
+}
+
+.calculate-btn:hover {
+    box-shadow: 4px 4px 4px 4px rgba(11, 45, 158, 0.398);
+}
+
+.reset-btn {
+    padding: 20px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    transition: all ease 0.3s;
+    background-color: transparent;
+    /* "Frost" — blur pe ce e în spatele cardului */
+    backdrop-filter: blur(15px) saturate(140%);
+    -webkit-backdrop-filter: blur(15px) saturate(140%);
+
+    /* margine fină, ca o muchie de sticlă */
+    border: 1px solid rgba(11, 255, 255, 0.18);
+
+    /* "Depth" + "Refraction" simulate prin umbre interioare */
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.4),
+        /* highlight sus, ca lumina care intră */ inset 0 -1px 1px rgba(0, 0, 0, 0.3),
+        /* umbră jos, adâncime */ inset 0 0 40px rgba(79, 195, 247, 0.08),
+        /* glow difuz din interior */ 0 8px 32px rgba(0, 0, 0, 0.4); /* umbră proiectată pe fundal */
+}
+
+.reset-btn:hover {
+    box-shadow: 4px 4px 4px 4px rgba(158, 11, 75, 0.398);
+}
+
+@media screen and (max-width: 700px) {
+    .card {
+        width: 90%;
+    }
+}
