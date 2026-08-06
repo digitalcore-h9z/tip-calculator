@@ -194,5 +194,20 @@ body {
 @media screen and (max-width: 700px) {
     .card {
         width: 90%;
+        padding: 20px;
+    }
+    .card input {
+        padding: 10px;
+    }
+    .card h3 {
+        font-size: 25px;
+    }
+    .card input::placeholder {
+        font-size: 13px;
+    }
+
+    .card p,
+    .card label {
+        font-size: 16px;
     }
 }
