@@ -193,11 +193,12 @@ body {
 
 @media screen and (max-width: 700px) {
     .card {
-        width: 90%;
+        width: 100%;
         padding: 20px;
     }
-    .card input {
-        padding: 10px;
+    .card input,
+    .btns {
+        padding: 12px 12px;
     }
     .card h3 {
         font-size: 25px;
