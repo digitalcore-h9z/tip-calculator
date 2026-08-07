@@ -109,10 +109,10 @@ body {
     border-radius: 10px;
     outline: none;
     color: #fff;
-    background-color: rgba(11, 46, 158, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     /* "Frost" — blur pe ce e în spatele cardului */
-    backdrop-filter: blur(15px) saturate(140%);
-    -webkit-backdrop-filter: blur(15px) saturate(140%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     /* margine fină, ca o muchie de sticlă */
     border: 1px solid rgba(11, 255, 255, 0.18);
@@ -143,10 +143,10 @@ body {
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: rgba(11, 46, 158, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     /* "Frost" — blur pe ce e în spatele cardului */
-    backdrop-filter: blur(15px) saturate(140%);
-    -webkit-backdrop-filter: blur(15px) saturate(140%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     /* margine fină, ca o muchie de sticlă */
     border: 1px solid rgba(11, 255, 255, 0.18);
