@@ -8,8 +8,8 @@ function calculation() {
 }
 
 function reset() {
-    Number((document.getElementById("price").value = ""));
-    Number((document.getElementById("tip").value = ""));
+    document.getElementById("price").value = "";
+    document.getElementById("tip").value = "";
     document.getElementById("priceTip").textContent = "Pret bacsis: ";
     document.getElementById("total-p").textContent = "Total";
 }
